@@ -21,6 +21,8 @@
                 Welcome to <span class=" font-(family-name:--my-font) text-[#e2d8b6]">MISS Recipe . Ai</span>
             </h1>
 
+
+
             <div class="flex flex-col md:flex-row gap-6">
 
                 <div class="flex-1 flex flex-col gap-4">
@@ -38,6 +40,14 @@
 
                     </form>
 
+                    <div id="toggleBtn" class="h-auto w-full mr-auto flex items-center ml-2  ">
+                        <input onclick="isCheacked()" class="hidden" type="checkbox" name="" id="toggleCheck">
+                        <label
+                            class="bg-green-300 w-10 h-5 rounded-4xl cursor-pointer relative transition duration:0.2s"
+                            for="toggleCheck" id="toggle"></label>
+                        <p class="ml-1 font-semibold text-xs text-stone-800">select your preference</p>
+                    </div>
+
                     <div id="keys" class="grid grid-cols-3 sm:grid-cols-6 gap-3">
                         <button onclick="appendToDisplay('Tomato, ')"
                             class="bg-[#121f1f] rounded-4xl h-10 border border-[#2e3e3e] hover:bg-[#2e3e3b] text-white active:bg-white active:text-black">Tomato</button>
@@ -47,26 +57,33 @@
                             class="bg-[#121f1f] rounded-4xl h-10 border border-[#2e3e3e] hover:bg-[#2e3e3b] text-white active:bg-white active:text-black">Potato</button>
                         <button onclick="appendToDisplay('Rice, ')"
                             class="bg-[#121f1f] rounded-4xl h-10 border border-[#2e3e3e] hover:bg-[#2e3e3b] text-white active:bg-white active:text-black">Rice</button>
-                        <button onclick="appendToDisplay('Chillies, ')"
-                            class="bg-[#121f1f] rounded-4xl h-10 border border-[#2e3e3e] hover:bg-[#2e3e3b] text-white active:bg-white active:text-black">Chillies</button>
-                        <button onclick="appendToDisplay('Bread, ')"
-                            class="bg-[#121f1f] rounded-4xl h-10 border border-[#2e3e3e] hover:bg-[#2e3e3b] text-white active:bg-white active:text-black">Bread</button>
-                        <button onclick="appendToDisplay('Peas, ')"
-                            class="bg-[#121f1f] rounded-4xl h-10 border border-[#2e3e3e] hover:bg-[#2e3e3b] text-white active:bg-white active:text-black">Peas</button>
+                        <button onclick="appendToDisplay('Paneer, ')" id="vegItemOne"
+                            class="bg-[#121f1f] rounded-4xl h-10 border border-[#2e3e3e] hover:bg-[#2e3e3b] text-white active:bg-white active:text-black">Paneer</button>
+                        <button onclick="appendToDisplay('Soyabean, ')" id="vegItemTwo"
+                            class="bg-[#121f1f] rounded-4xl h-10 border border-[#2e3e3e] hover:bg-[#2e3e3b] text-white active:bg-white active:text-black">Soyabean</button>
+                        <button onclick="appendToDisplay('Mushroom, ')" id="vegItemThree"
+                            class="bg-[#121f1f] rounded-4xl h-10 border border-[#2e3e3e] hover:bg-[#2e3e3b] text-white active:bg-white active:text-black">Mushroom</button>
+                        <button onclick="appendToDisplay('Chicken, ')"  id="nonVegItemOne"
+                            class="bg-[#121f1f] rounded-4xl h-10 border border-[#2e3e3e] hover:bg-[#2e3e3b] text-white active:bg-white active:text-black hidden">Chicken</button>
+                        <button onclick="appendToDisplay('Mutton, ')" id="nonVegItemTwo"
+                            class="bg-[#121f1f] rounded-4xl h-10 border border-[#2e3e3e] hover:bg-[#2e3e3b] text-white active:bg-white active:text-black hidden">Mutton</button>
+                        <button onclick="appendToDisplay('Fish, ')" id="nonVegItemThree"
+                            class="bg-[#121f1f] rounded-4xl h-10 border border-[#2e3e3e] hover:bg-[#2e3e3b] text-white active:bg-white active:text-black hidden">Fish</button>
+                            <button onclick="appendToDisplay('Milk, ')"
+                                class="bg-[#121f1f] rounded-4xl h-10 border border-[#2e3e3e] hover:bg-[#2e3e3b] text-white active:bg-white active:text-black">Milk</button>
                         <button onclick="appendToDisplay('Curd, ')"
                             class="bg-[#121f1f] rounded-4xl h-10 border border-[#2e3e3e] hover:bg-[#2e3e3b] text-white active:bg-white active:text-black">Curd</button>
-                        <button onclick="appendToDisplay('Milk, ')"
-                            class="bg-[#121f1f] rounded-4xl h-10 border border-[#2e3e3e] hover:bg-[#2e3e3b] text-white active:bg-white active:text-black">Milk</button>
                         <button onclick="appendToDisplay('Cheese, ')"
                             class="bg-[#121f1f] rounded-4xl h-10 border border-[#2e3e3e] hover:bg-[#2e3e3b] text-white active:bg-white active:text-black">Cheese</button>
                         <form id="addItemForm"
                             class=" flex bg-[#121f1f] rounded-xl h-10 border border-[#2e3e3e] flex items-center justify-center text-sm text-[#9fae91] cursor-pointer hover:text-[#c8d5b0] transition">
-                            <input id="addItem"
+                            <input required id="addItem"
                                 class="capitalize border-0 outline-none p-2 placeholder:text-stone-400 placeholder:text-xs placeholder:font-semibold h-full w-full text-white font-medium"
                                 placeholder="add items" type="text">
-                            <button id="addItemBtn" onclick="addToDisplay()"
+                            <button type="submit" id="addItemBtn" onclick="addToDisplay()"
                                 class="flex justify-center items-center text-white hover:bg-gray-500  h-7 w-9 bg-[#121f1f] m-2 rounded-xl">+</button>
                         </form>
+
                         <button onclick="popOne()" id="deleteBtn"
                             class="bg-white border border-gray-500 ml-auto h-10 w-10 rounded-4xl text-md text-[#7b8c72] hover:bg-red-500 hover:text-black active:bg-white cursor-pointer">
                             <i class="fa-solid fa-trash"></i>
@@ -75,10 +92,13 @@
 
                     <!-- output-section -->
 
-                    <div class=" flex justify-center items-center gap-3 ">
+                    <div
+                        class=" flex justify-center items-center gap-3 flex-col-reverse sm:flex-row md:flex-row lg:flex-row xl:flex-row ">
                         <div
-                            class="bg-[#121f1f] rounded-2xl min-h-40 w-7/10 mt-2 border border-[#2e3e3e] text-white font-semibold text-sm">
-                            <p id="recipeResult" class="w-10/10 h-40 m-2 p-2 overflow-y-auto overflow-x-hidden text-ellipsis outline-none"></p>
+                            class="bg-[#121f1f] rounded-2xl min-h-40 w-10/10 mt-2 border border-[#2e3e3e] text-white font-semibold text-sm">
+                            <p id="recipeResult"
+                                class="w-10/10 sm:w-7/10 md:w-7/10 lg:w-7/10 xl:w-7/10 h-60 sm:h-40 md:h-40 lg:h-40 xl:h-40 m-2 p-2 overflow-y-auto overflow-x-hidden text-ellipsis outline-none">
+                            </p>
                         </div>
 
                         <div id="processBox"

@@ -22,7 +22,6 @@
       font-family: "DM Serif Text", serif;
       letter-spacing: 1px;
 
-
 }
 
 #container {
@@ -40,8 +39,26 @@
         font-family: "Carter One", system-ui;
 
     }
-
 }
+
+#toggle::before{
+    position: absolute;
+    content: '';
+    background-color: white;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    margin: 2px 3px;
+    transition: all 0.3s ease;
+}
+
+input:checked + #toggle{
+    background-color: red;
+}
+input:checked + #toggle::before{
+   transform: translateX(22px);
+}
+
 
 #processBox {
     background-image: url(./Assets/grok-image-854e3558-5ebf-41f6-ac0e-8c884fd69394.png);
