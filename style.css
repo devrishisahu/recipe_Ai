@@ -1,0 +1,50 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap'); */
+/* @import url('https://fonts.googleapis.com/css2?family=Kablammo&display=swap'); */
+/* @import url('https://fonts.googleapis.com/css2?family=Rubik+Gemstones&display=swap'); */
+/* font-family: "Kablammo", system-ui; */
+/* font-family: "Rubik Burned", system-ui; */
+/* font-family: "Rubik Gemstones", system-ui; */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap');
+
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Burned&display=swap');
+
+
+@import url('https://fonts.googleapis.com/css2?family=Carter+One&display=swap');
+
+
+
+* {
+    box-sizing: border-box;
+    /* font-family: "Fjalla One", sans-serif; */
+
+      font-family: "DM Serif Text", serif;
+      letter-spacing: 1px;
+
+
+}
+
+#container {
+    background-image: url(./Assets/bg-img.jpeg);
+    background-size: cover;
+    background-position: bottom;
+
+}
+
+#title {
+    font-family: "Rubik Burned", system-ui;
+
+    span {
+
+        font-family: "Carter One", system-ui;
+
+    }
+
+}
+
+#processBox {
+    background-image: url(./Assets/grok-image-854e3558-5ebf-41f6-ac0e-8c884fd69394.png);
+    background-size: cover;
+    background-position: center;
+}
